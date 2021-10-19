@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+/* SIDE MENU */
+
+body {
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.side_menu {
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/full-bloom.png");
+}
+
+.logo {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.nav-item i {
+    width: 16px;
+    height: 16px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-image: linear-gradient(to top, #a164f5, #c873e5, #df87d9, #eba0d3, #efbad3);
+    font-weight: bold;
+}
+
+/* STOPWATCH SECTION */
+
+.stopwatch_wrapper {
+    background-image: linear-gradient(to top, #a164f5, #c873e5, #df87d9, #eba0d3, #efbad3);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stopwatch_container {
+    width: 50%;
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/full-bloom.png");
+    height: 50%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.stopwatch {
+    font-size: 60px;
+    color: #a666f3;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.milliseconds {
+    display: inline-block;
+    width: 100px
+}
+
+.date {
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: center;
+}
