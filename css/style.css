@@ -34,9 +34,7 @@ main {
     font-weight: bold;
 }
 
-/* STOPWATCH SECTION */
-
-.stopwatch_wrapper {
+.stopwatch_wrapper, .log_table_wrapper {
     background-image: linear-gradient(to top, #a164f5, #c873e5, #df87d9, #eba0d3, #efbad3);
     width: 100%;
     display: flex;
@@ -46,6 +44,13 @@ main {
 
 .stopwatch_container {
     width: 50%;
+}
+
+.log_table_container {
+    width: 75%;
+}
+
+.stopwatch_container, .log_table_container {
     background: url("https://www.toptal.com/designers/subtlepatterns/patterns/full-bloom.png");
     height: 50%;
     border-radius: 15px;
@@ -57,7 +62,11 @@ main {
     flex-direction: column;
 }
 
-.stopwatch {
+#log_table th, #log_table td {
+    vertical-align: middle;
+}
+
+.title, .stopwatch {
     font-size: 60px;
     color: #a666f3;
     font-weight: bold;
