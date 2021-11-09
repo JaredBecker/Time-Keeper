@@ -3,6 +3,7 @@
 
 body {
     min-height: 100vh;
+    position: relative;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -34,6 +35,23 @@ main {
     font-weight: bold;
 }
 
+.message_box {
+    width: 450px;
+    padding: 50px;
+    text-align: center;
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    border-radius: 15px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    transition: all 0.4s ease;
+}
+
+.message_box.show {
+    top: 120px;
+}
+
 .stopwatch_wrapper, .log_table_wrapper {
     background-image: linear-gradient(to top, #a164f5, #c873e5, #df87d9, #eba0d3, #efbad3);
     width: 100%;
@@ -52,7 +70,6 @@ main {
 
 .stopwatch_container, .log_table_container {
     background: url("https://www.toptal.com/designers/subtlepatterns/patterns/full-bloom.png");
-    height: 50%;
     border-radius: 15px;
     box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5);
     padding: 20px;

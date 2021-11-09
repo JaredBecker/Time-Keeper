@@ -6,6 +6,8 @@ let mil = 0;
 let stopwatch = document.querySelector('.stopwatch');
 
 const startStopwatch = () => {
+    checkIfStarted();
+
     stopwatchInterval = setInterval(() => {
         if (mil < 975) {
             mil += 25;
@@ -38,6 +40,25 @@ const pauseStopwatch = () => {
     clearInterval(stopwatchInterval);
 }
 
+const checkIfStarted = () => {
+    hasStarted = localStorage.getItem('start_time');
+
+    if (hasStarted === null) {
+        // We need to create a timestamp to save when the process was started
+        let time = getTime();
+        localStorage.setItem('start_time', time);
+    }
+}
+
+const getTime = () => {
+    let date = new Date();
+    let hour = date.getHours();
+    let min = date.getMinutes();
+    let sec = date.getSeconds();
+
+    return `${hour}:${min}:${sec}`;
+}
+
 const completeLog = () => {
     let logs = [];
     let newLog = {
@@ -46,6 +67,8 @@ const completeLog = () => {
         hour: hour,
         min: min,
         sec: sec,
+        startTime: localStorage.getItem('start_time'),
+        endTime: getTime(),
         date: new Date().toLocaleDateString("en-US")
     }
 
@@ -55,8 +78,9 @@ const completeLog = () => {
 
     logs.push(newLog);
     localStorage.setItem('logs', JSON.stringify(logs));
+    localStorage.removeItem('start_time');
 
-    alert('Log saved successfully!');
+    showMessage('Log saved successfully!');
 
     hour = 0;
     min = 0;
@@ -64,6 +88,18 @@ const completeLog = () => {
     mil = 0;
 
     stopwatch.innerHTML = 'Let\'s Begin!';
+}
+
+const showMessage = (msg) => {
+    const msgBox = document.querySelector('.message_box');
+    const msgDiv = document.querySelector('.message');
+
+    msgDiv.innerText = msg;
+    msgBox.classList.add('show');
+
+    setTimeout(() => {
+        msgBox.classList.remove('show')
+    }, 1500);
 }
 
 const findNextId = () => {

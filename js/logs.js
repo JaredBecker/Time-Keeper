@@ -21,6 +21,8 @@ const createLogRow = (log) => {
         <tr>
             <th scope="row">${log.id}</th>
             <td>${log.title}</td>
+            <td>${log.startTime}</td>
+            <td>${log.endTime}</td>
             <td>${time}</td>
             <td>${log.date}</td>
             <td>
